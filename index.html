@@ -1,0 +1,2649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schocho Coin</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head> 
+    
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #32CD32;
+            color: black;
+            font-weight: bold
+            overflow-x: hidden;
+            
+            
+            
+            
+        }
+        
+        
+        
+        
+        
+
+
+
+
+/* التنسيق الافتراضي (للأجهزة الصغيرة والمتوسطة) */
+body {
+    font-size: 2vw;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+/* استهداف الأجهزة الكبيرة (شاشات أكبر من 1200px عرضًا) */
+@media screen and (min-width: 1200px) {
+    body {
+        font-size: 1.2vw; /* تصغير النصوص لتتناسب مع الشاشة */
+        line-height: 1.6; /* تحسين المسافة بين السطور */
+    }
+
+    h1 {
+        font-size: 1vw; /* عنوان كبير ولكن متناسق */
+    }
+
+    h2 {
+        font-size: 1vw; /* عناوين فرعية أصغر */
+    }
+
+    p {
+        font-size: 1vw; /* حجم مناسب للنصوص العادية */
+    }
+
+    button {
+        font-size: 1vw; /* أزرار بحجم مناسب */
+        padding: 1vw 1vw; /* مسافات داخل الأزرار */
+        border-radius: 0.5vw; /* زوايا منحنية */
+    }
+
+    .dancing-emoji {
+        width: 3vw;
+        height: 3vw;
+    }
+}
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+.hero {
+    height: 28vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    color: black;
+    position: relative;
+    overflow: hidden;
+    width:
+}
+
+.hero img {
+    position: ;
+    right: 0vw;  /* جعل الصورة على أقصى اليمين */
+    
+    margin-top: 0vw;    /* الصورة تبدأ من أعلى العنصر */
+    height: 60%;  /* الحفاظ على الارتفاع */
+    object-fit: cover;  /* تأكد من أن الصورة تملأ المساحة بشكل مناسب */
+
+  width: 40vw;
+  height: 40vw;
+  
+}
+
+
+
+
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: ;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: black;
+            margin-top: 5vw;
+        }
+
+    .hero h1 {
+    font-size: 2vw;
+    margin-top: 7vw;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: typing 4s steps(30, end) 3s infinite, /* إضافة 3 ثوانٍ قبل إعادة التشغيل */
+               blink 0.5s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white;
+    position: relative;
+}
+
+
+
+        .hero p {
+          font-size: 2vw;
+          margin-top: 7vw;
+          font-weight: bolder;
+          color: red;
+          text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 0, 0.5);
+          background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: ;
+          animation: textAnimation 60s infinite, glow 60s infinite alternate;
+
+        }
+
+
+
+
+
+
+
+
+        .hero button {
+            background-color: green;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 4vw;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .hero button:hover {
+            background-color: #f39c12;
+            transform: scale(1.05);
+        }
+
+        /* Animation for Pizza Boxes */
+        .pizza-guy {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: shake 3s infinite;
+        }
+
+        .pizza-guy img {
+            width: 150px;
+            animation: offer 2s infinite alternate;
+        }
+
+        @keyframes offer {
+            from {
+                transform: translateY(0) rotate(0deg);
+            }
+            to {
+                transform: translateY(-10px) rotate(5deg);
+            }
+        }
+
+        @keyframes shake {
+            0%, 100% {
+                transform: translateX(-50%) rotate(0deg);
+            }
+            50% {
+                transform: translateX(-50%) rotate(2deg);
+            }
+        }
+
+        /* Floating Pizza Slice */
+      
+
+/* خلفية المعلومات */
+
+ .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* يضمن أن الصورة والنصوص تكون في الأعلى */
+
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 0px;
+
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 2s ease-out;
+    font-weight: 900;
+    
+
+   
+}
+
+.content {
+    text-align: left;
+    color: white;
+    flex: 1; /* يعطي مساحة للنصوص لكي تأخذ المساحة المتبقية */
+   
+}
+
+.solscan-image {
+  width: 2vw;
+  height: auto;
+  margin-left: 10px;
+  vertical-align: middle;
+  margin-top: vw;
+}
+
+.image {
+    height: 20vh; /* الحفاظ على نفس الارتفاع */
+    object-fit: cover; /* لضمان تغطية الصورة بشكل مناسب */
+    width: 20%; /* الصورة تأخذ 40% من العرض */
+    margin-right: 0px; /* مسافة بين الصورة والمحتوى */
+    align-items: flex-end
+}
+
+.info-item {
+    font-size: 3vw;
+    color: red;
+    
+    padding: 1vw;
+    border-radius: 8px; /* حواف مستديرة */
+    display: block; /* تضمن أن جميع العناصر تحتل نفس الطول */
+    width: 70%; /* يضمن أن الخلفية تمتد على كامل العرض */
+    
+margin-left: 1vw;
+background-color: rgba(0, 0, 0, 0.8); /* خلفية سوداء شفافة */
+    
+    border-radius: 1vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: left;  
+    font-weight: 900;
+    
+    animation: glow 2s infinite alternate; /* تأثير توهج */
+}
+
+.info-item .important {
+    color: white; /* لون ذهبي */
+    font-weight: 900;
+    
+    padding: 1vw;
+    border-radius: 1vw;
+    
+    
+    
+} 
+
+  /* تعديل عرض الصور */
+  .remy-icon {
+    width: 6vw;
+    /* تعديل عرض الصورة لتتناسب مع تصميم الشاشات الكبيرة */
+    height: auto;
+    border-radius: 1vw;
+    /* إضافة حواف دائرية للصورة */
+    
+    margin: 2vw auto;
+  }
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInItems {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* حركة النص المتحرك */
+.pizza-delivery-guy {
+    text-align: center;
+    margin: 0px 0;
+    font-size: 4vw;
+    font-weight: bold;
+    color: #d23f31;
+    white-space: nowrap;
+    overflow: hidden;
+    width: ;
+    animation: typeText 5s steps(40) forwards, repeatText 7s 7s infinite; /* الكتابة ثم التكرار */
+   ;
+}
+
+
+.pizza-delivery-guy img{
+    
+  width: 25vw;
+  height: auto;
+    
+}
+
+
+@keyframes typeText {
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes repeatText {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* ظهور العناصر النصية */
+@keyframes fadeInItems {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* شراء الزر */
+
+}
+
+/* تأثير الخلفية */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+     
+     
+        /* Roadmap Section */
+/* الخلفية الجميلة لخطة الطريق */
+
+
+        /* Footer Section */
+        
+        /* Dog Image Section */
+        .dog-image {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .dog-image img {
+            width: 50%;
+            animation: jump 1.5s infinite;
+            border-radius: 5px;
+        }
+
+        @keyframes jump {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        
+        
+        
+        
+      
+
+/* Story Content */
+
+/* Story Header */
+.story-header {
+    text-align: center;
+    font-size: 2vw;
+    color: tomato;
+    position: relative;
+    margin: 3vw auto;
+}
+
+/* Story Text */
+.story-text {
+    font-size: 2.7vw;
+    color: #333;
+    line-height: 1.6;
+    max-width: 1000%;
+    margin: 10px auto;
+}
+
+/* Moving Image (Bike Animation) */
+
+
+/* Note */
+.note {
+    margin-top: 1vw;
+    font-size: 0.6rem;
+    color: darkblue;
+    font-weight: ;
+    text-align: center;
+}
+
+/* Media Query for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .roadmap-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .roadmap-phase {
+        width: 80%; /* Make each phase take more space on mobile */
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+}
+   
+    /* تنسيق الفوتر */
+/* تنسيق الفوتر */
+html, body {
+    height: 100%; /* التأكد من أن ارتفاع الصفحة 100% */
+    margin: 0; /* إزالة الهامش الافتراضي */
+    padding: 0; /* إزالة الحشو الافتراضي */
+}
+
+
+
+main {
+    flex: 1; /* يجعل المحتوى يملأ المساحة المتاحة */
+}
+
+/* تنسيق الفوتر */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    font-size: 1.3vw;
+    width: 100%; /* التأكد من أن الفوتر يمتد عبر كامل عرض الصفحة */
+    box-sizing: border-box; /* لضمان تناسق الحواف والمسافات */
+}
+
+/* تنسيق الفقرات داخل الفوتر */
+footer p {
+    margin: 1vw 0;
+}
+
+/* تنسيق الأيقونات الاجتماعية */
+footer .social-icon {
+    width: 6vw; /* تصغير حجم الأيقونات */
+    height: auto;
+    margin: 0 8px; /* مسافة بين الأيقونات */
+    vertical-align: middle; /* محاذاة الأيقونات مع النص */
+}
+
+/* تنسيق الروابط */
+footer a {
+    color: #d23f31;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* تنسيق النص الخاص بحقوق الملكية */
+footer .credit {
+  font-size: 0.5vw;
+  color: #777;
+  text-align: center;
+  margin-top: 10px;
+}
+    
+    
+    .about-section {
+      margin: 40px 0;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      background: ;
+    }
+    
+    .about-section h2 {
+      font-size: 2vw;
+      color: darkblue;
+      font-weight: bold;
+      margin-bottom: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: ;
+      font-weight: bold;
+
+    }
+    
+
+    
+    .about-image {
+      width: 14vw;
+      height: 14vw;
+      border-radius: 10px;
+      object-fit: contain;
+      
+    }
+    
+.about-text {
+    font-size: 2vw; 
+    color: black; 
+    line-height: 1.8; 
+    max-width: 85%; 
+    margin: 0 auto; 
+    text-align: left;
+    letter-spacing: 0.5px; 
+    font-family: 'Poppins', sans-serif; 
+    text-transform: none; 
+    font-weight: 400; 
+}
+
+.about-content {
+    background-color: #32CD32;
+    padding: 1vw; 
+    border-radius: 1vw; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+    
+    
+    
+.about-title {
+    font-size: 6vw;
+    font-weight: bold; 
+    color: white;
+    text-align: left;  
+    font-family: 'Poppins', sans-serif; 
+    text-transform: lowercase; 
+    margin-bottom: 1vw; 
+    background-color: transparent; 
+    display: block; 
+    letter-spacing: -2px; 
+    text-shadow: -2px -2px 0px #32CD32, 2px 2px 0px #32CD32; 
+}
+
+ 
+    
+.social-icon {
+  width: 10vw;
+  height: 10vw;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+
+      
+      
+      
+
+.sidebar-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 1000;
+    
+    
+}
+
+
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 100%; 
+    width: 40‰;
+    height: 100%;
+    background-color: white;
+    color: black;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    gap: px;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease; 
+    z-index: 999;
+    font-weight: 900;
+    
+}
+
+
+.sidebar-item {
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    font-size: 6vw;
+    transition: background-color 0.3s;
+}
+
+.sidebar-item:hover {
+    background-color: #f39c12;
+   
+}
+
+.sidebar-icon i {
+  font-size: ;   
+  color: black;  
+}
+
+} 
+
+/* تحويل الشريط الجانبي إلى شريط أفقي على الشاشات الكبيرة */
+
+
+@media (min-width: 1080px) {
+    /* الشريط يتحول إلى أفقي */
+    .sidebar {
+        position: absolute;
+        top: 0;
+       left: 0;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: transparent;
+        padding: 10px 0;
+        color:
+    }
+
+    /* الأيقونة تختفي */
+    .sidebar-icon {
+        display: none;
+    }
+    
+    
+    
+    
+
+    
+    
+    .hero img {
+      position: relative;
+       margin-top: 100vh;
+        width: 12vw;
+        height: 12vw;
+        
+        /* زيادة المسافة أكثر على الكمبيوتر */
+    }
+
+
+
+
+.about-title {
+  
+  font-size: 1.5vw;
+}
+
+.about-content {
+    width: 45%; /* تخصيص 45% من العرض للنص */
+    text-align: left; /* محاذاة النص لليمين */
+  }
+
+  #cooperImage {
+    width: 15vw; /* تحديد عرض الصورة على أجهزة الكمبيوتر */
+    height: auto; /* الحفاظ على نسبة العرض والارتفاع */
+    border-radius: 1vw;
+  }
+
+  .about-text {
+    font-size: 1.5vw; /* حجم النص */
+  }
+
+  .learn-more-btn {
+    font-size: 1vw; /* حجم الزر */
+    padding: 1vw; /* حجم padding للزر
+    
+    */
+ 
+.learn-more-btn { */
+  background-color: #007bff; /* background */
+  color: white; 
+  padding: 2px;
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Rounded corners */
+  font-weight: bold; /* Make text bold */
+}
+
+    
+   
+    
+
+
+
+ 
+
+    
+    
+    
+    
+
+
+
+
+    /* الأزرار تبقى أفقية */
+    .sidebar-item {
+        font-size: 1.2rem;
+        padding: 10px 15px;
+        background-color: transparent;
+        color: #333;
+    }
+
+    .sidebar-item:hover {
+        color: #f39c12;
+    }
+
+    /* إضافة مسافة أسفل الشريط */
+    .content {
+        margin-top: 80px; /* المسافة المطلوبة لتجنب التغطية */
+        
+       
+    }
+    
+    
+
+  
+    .roadmap-phase {
+        width: 80%; /* Make each phase take more space on mobile */
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+}
+   
+    /* تنسيق الفوتر */
+/* تنسيق الفوتر */
+html, body {
+    height: 100%; /* التأكد من أن ارتفاع الصفحة 100% */
+    margin: 0; /* إزالة الهامش الافتراضي */
+    padding: 0; /* إزالة الحشو الافتراضي */
+}
+
+
+
+main {
+    flex: 1; /* يجعل المحتوى يملأ المساحة المتاحة */
+}
+
+/* تنسيق الفوتر */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    font-size: 1.3vw;
+    width: 100%; /* التأكد من أن الفوتر يمتد عبر كامل عرض الصفحة */
+    box-sizing: border-box; /* لضمان تناسق الحواف والمسافات */
+}
+
+/* تنسيق الفقرات داخل الفوتر */
+footer p {
+    margin: 1vw 0;
+}
+
+/* تنسيق الأيقونات الاجتماعية */
+footer .social-icon {
+    width: 6vw; /* تصغير حجم الأيقونات */
+    height: auto;
+    margin: 0 8px; /* مسافة بين الأيقونات */
+    vertical-align: middle; /* محاذاة الأيقونات مع النص */
+}
+
+/* تنسيق الروابط */
+footer a {
+    color: #d23f31;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* تنسيق النص الخاص بحقوق الملكية */
+footer .credit {
+  font-size: 0.5vw;
+  color: #777;
+  text-align: center;
+  margin-top: 10px;
+}
+    
+    
+    .about-section {
+      margin: 40px 0;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      background: ;
+    }
+    
+    .about-section h2 {
+      font-size: 2vw;
+      color: darkblue;
+      font-weight: bold;
+      margin-bottom: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: ;
+      font-weight: bold;
+
+    }
+    
+
+    
+    .about-image {
+      width: 14vw;
+      height: 14vw;
+      border-radius: 10px;
+      object-fit: contain;
+      
+    }
+    
+.about-text {
+    font-size: 2vw; 
+    color: black; 
+    line-height: 1.8; 
+    max-width: 85%; 
+    margin: 0 auto; 
+    text-align: left;
+    letter-spacing: 0.5px; 
+    font-family: 'Poppins', sans-serif; 
+    text-transform: none; 
+    font-weight: 400; 
+}
+
+.about-content {
+    background-color: #32CD32;
+    padding: 1vw; 
+    border-radius: 1vw; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+    
+    
+    
+.about-title {
+    font-size: 6vw;
+    font-weight: bold; 
+    color: white;
+    text-align: left;  
+    font-family: 'Poppins', sans-serif; 
+    text-transform: lowercase; 
+    margin-bottom: 1vw; 
+    background-color: transparent; 
+    display: block; 
+    letter-spacing: -2px; 
+    text-shadow: -2px -2px 0px #32CD32, 2px 2px 0px #32CD32; 
+}
+
+ 
+    
+
+
+
+
+  /* ضبط العنوان الرئيسي */
+  .about-texts {
+    font-size: 2vw; /* حجم أصغر للنص */
+    margin-bottom: 3vw;
+    color: white;
+    text-align: center; /* توسيط النص */
+    text-transform: capitalize; /* جعل الحروف الأولى كبيرة فقط */
+  }
+}
+
+
+
+
+
+
+@media (min-width: 1080px) {
+    /* الشريط يتحول إلى أفقي */
+    .sidebar {
+        position: absolute;
+        top: 0;
+       left: 0;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: transparent;
+        padding: 10px 0;
+    }
+
+    /* الأيقونة تختفي */
+    .sidebar-icon {
+        display: none;
+    }
+    
+    
+    
+    
+.about-content {
+    width: 45%; /* تخصيص عرض النص */
+    text-align: left; /* النص يبقى كما هو على اليسار */
+    display: inline-block; /* لضمان الترتيب الصحيح */
+    vertical-align: top; /* محاذاة النص عمودياً مع الصورة */
+  }
+
+  /* تخصيص الصورة */
+
+    
+    .hero img {
+      position: relative;
+       margin-top: 100vh;
+        width: 12vw;
+        height: 12vw;
+        
+        /* زيادة المسافة أكثر على الكمبيوتر */
+    }
+
+
+
+.about-title {
+  
+  font-size: 1.5vw;
+}
+
+.about-content {
+    width: 45%; /* تخصيص 45% من العرض للنص */
+    text-align: left; /* محاذاة النص لليمين */
+  }
+
+
+ 
+
+
+  .about-text {
+    font-size: 1.5vw; /* حجم النص */
+  }
+
+  .learn-more-btn {
+    font-size: 1vw; /* حجم الزر */
+    padding: 1vw; /* حجم padding للزر */
+
+
+
+  /* ترتيب العناصر بشكل أفقي */
+
+  .about-texts {
+    font-size: 2vw; /* حجم أصغر للنص */
+    margin-bottom: 3vw;
+    color: white;
+    text-align: center; /* توسيط النص */
+    text-transform: capitalize; /* جعل الحروف الأولى كبيرة فقط */
+  }
+}
+
+
+
+
+
+@media (min-width: 1080px) {
+  /* تنسيق المربعات النصية داخل الـsection */
+  
+  
+
+
+  /* تنسيق كل مرحلة (Phase) */
+  #roadmap div[style*="max-width: 85%"] > div {
+    flex: 1; /* جعل كل عنصر يأخذ نفس النسبة */
+    max-width: 22%; /* تحديد العرض الأقصى لكل عنصر */
+    margin-bottom: 0; /* إزالة المسافة السفلية */
+    text-align: center; /* محاذاة النصوص والصور في المنتصف */
+  }
+
+  /* ضبط الصور */
+  #roadmap img {
+    width: 100%; /* ملاءمة الصورة داخل العنصر */
+    height: auto;
+    border-radius: 1vw; /* حواف دائرية للصور */
+  }
+
+  /* تعديل العناوين */
+  #roadmap h3 {
+    font-size: 1.5vw; /* تقليل حجم النص */
+    font-weight: bold;
+    color: red;
+    margin-top: 1vw;
+  }
+
+  /* تعديل النصوص الفرعية */
+  #roadmap p {
+    font-size: 1vw; /* تصغير حجم النصوص */
+    line-height: 1.5; /* تحسين التباعد بين الأسطر */
+    color: ;
+  }
+
+  /* ضبط العنوان الرئيسي */
+  .about-texts {
+    font-size: 2vw; /* حجم أصغر للنص */
+    margin-bottom: 3vw;
+    color: white;
+    text-align: center; /* توسيط النص */
+    text-transform: capitalize; /* جعل الحروف الأولى كبيرة فقط */
+    
+   
+   
+   
+  }
+
+}
+
+  
+
+
+
+  .remy-icon {
+    width: 35vw; /* تعديل عرض الصورة لتتناسب مع تصميم الشاشات الكبيرة */
+    height: auto;
+    border-radius: 1vw; /* إضافة حواف دائرية للصورة */
+    color: 
+    
+  }
+
+ 
+
+    
+    
+    
+  .learn-more-btn {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    padding: 2px;/* Padding for button */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold; /* Make text bold */
+  }
+
+
+
+
+
+    /* الأزرار تبقى أفقية */
+    .sidebar-item {
+        font-size: 1.2rem;
+        padding: 10px 15px;
+        background-color: transparent;
+        color: #333;
+    }
+
+    .sidebar-item:hover {
+        color: #f39c12;
+    }
+
+    /* إضافة مسافة أسفل الشريط */
+    .content {
+        margin-top: 80px; /* المسافة المطلوبة لتجنب التغطية */
+        
+       
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    .text {
+        text-align: left;  /* محاذاة النص لليسار على الكمبيوتر */
+        margin-right: 3vw;  /* ترك مسافة بين النص والصورة */
+    }
+
+    .image {
+        width: 40%;  /* تحديد عرض الصورة على الكمبيوتر */
+    }
+}
+ 
+   #roadmap h3 {
+    font-size: 4vw; /* تقليل حجم العناوين */
+    font-weight: bold;
+    color: red;
+    margin-top: 1vw;
+  }
+
+
+
+
+  
+
+      
+    </style>
+</head>
+<body>
+  
+<div class="sidebar-icon" onclick="toggleSidebar()">
+  <i class="fas fa-bars" style="font-size: 6vw; color: black;"></i> 
+</div>
+
+
+
+
+
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item" onclick="scrollToSection('about-section')">About</div>
+    <div class="sidebar-item" onclick="scrollToSection('buy-now')">Buy</div>
+    <div class="sidebar-item" onclick="scrollToSection('roadmap')">Roadmap</div>
+    <div class="sidebar-item" onclick="scrollToSection('tokennomics')">Tokennomics</div>
+
+    <!-- زر Whitepaper بشكل مشابه للأزرار الأخرى -->
+    <div class="sidebar-item" onclick="showWhitepaper()" style="background-color: gold; border-radius: 5px;">Whitepaper</div>
+</div>
+
+
+
+
+
+
+    <!-- Hero Section -->
+
+      
+<section class="hero" style="background-image: url(''); background-size: cover; background-position: right; background-color: #32CD32;">
+
+
+
+
+
+
+
+
+
+<img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/IMG_20241229_015702.png?alt=media&token=a46cf787-1b10-4b0a-b796-ac1254ff577c" 
+     alt="" 
+     style="margin-left: 40vw;" >
+
+
+
+
+    
+    
+   
+
+
+        
+        
+
+    
+        
+        
+
+    
+    </section>
+    
+    
+    <br>
+
+
+<section style="background-color: #32CD32; text-align: center;">
+  
+
+  
+
+  
+
+  <a href="https://x.com/WWavy95668?t=EOedudieeXmkPKE7pNOp7A&s=09" target="_blank">
+    <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/new-2023-twitter-logo-x-icon-design_1017-45418.jpg?alt=media&token=08143d22-606f-464b-8a0e-0974c41fb45e" alt="Twitter" class="social-icon" style="border-radius: 5vw; width: 7vw; height: 7vw;">
+  </a>
+  <a href="https://t.me/tiredguycto" target="_blank">
+    <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/2048px-Telegram_logo.svg.png?alt=media&token=6d6dc1de-c2fd-4dbd-83ca-4069f6b7e296" alt="Telegram" class="social-icon" style="width: 7vw; height: 7vw;">
+  </a>
+  
+  <a href="javascript:void(0);" onclick="showComingSoons()" class="social-link" style="position: relative;">
+    <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/IMG_20241212_194924.png?alt=media&token=c770ae1e-3ab6-48b0-bf0d-8b4e4cb83e65" alt="tiktok" class="social-icon" style="width: 7vw; height: 7vw;">
+    <div id="comingSoonText" style="display:none; background-color: red; color: white; text-align: center; padding: 5px; font-size: 1.5vw; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); width: 20vw; border-radius: 1vw; margin-bottom: 5px; z-index: 999; font-weight: 900;">
+      Coming Soon
+    </div>
+  </a>    
+  
+  
+  
+    <a href="javascript:void(0);" onclick="showComingSoon()" class="social-link" style="position: relative;">
+    <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/discord_icon_130958.png?alt=media&token=7b9c4138-b3cd-4d7f-be03-0a55ad6592dc" alt="discord" class="social-icon" style="width: 7vw; height: 7vw;">
+    <div id="comingSoonText" style="display:none; background-color: red; color: white; text-align: center; padding: 5px; font-size: 1.5vw; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); width: 20vw; border-radius: 1vw; margin-bottom: 5px; z-index: 999; font-weight: 900;">
+      Coming Soon
+    </div>
+  </a>
+
+
+
+  <!-- Add the 'Join Us' text -->
+  <p style="font-size: 1.5vw; margin-top: 2vw; color: black; font-weight: bold;">FOLLOW TiredGuy </p>
+  
+  
+  
+  
+  <style>
+    @media (min-width: 1024px) {
+      .social-icon {
+        width: 2.5vw !important; /* تغيير العرض للأيقونات */
+        height: 2.5vw !important; /* تغيير الارتفاع للأيقونات */
+      }
+      .social-link p {
+        font-size: 1vw !important; /* تغيير حجم النص */
+      }
+      p {
+        font-size: 1vw !important; /* تغيير حجم نص FOLLOW COOPER */
+      }
+    }
+  </style>
+</section>
+
+ 
+ 
+
+
+
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+  
+
+<section id="about-section" class="about-section" style="background-image: url(''); background-size: cover; background-position: right; background-color: #32CD32;">
+  <div class="about-content">
+    <div class="about-title">About</div>
+    <div class="about-text">
+TiredGuy became the face of effortless living. With a cigarette in one hand and a beer in the other, he embraced the chaos of life with a shrug, proving that not everything requires a grand effort. 
+    </div>
+    <div class="about-text">
+      TiredGuy’s philosophy is simple: why stress when you can just take it easy? His relaxed attitude and unbothered demeanor turned him into an icon for those tired of the hustle, reminding the world that sometimes, it’s okay to just not care. 
+
+    </div>
+  </div>
+
+
+
+
+<img id="cooperImage" src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/IMG_20241229_013334_181.jpg?alt=media&token=aa3aabe9-d664-444c-9bcb-8cce476c6f1a" alt="Image">
+
+
+
+
+
+<style>
+  /* الإعدادات الافتراضية للهواتف */
+  #cooperImage {
+    width: 80%; /* عرض الصورة على الهواتف */
+    height: auto; /* الحفاظ على نسبة العرض إلى الطول */
+    display: ; /* لتوسيط الصورة */
+    margin: ;
+    
+    /* لجعلها في المنتصف */
+    border-radius: 1vw;
+    
+  }
+
+  /* الإعدادات لأجهزة الكمبيوتر */
+  @media (min-width: 1080px) {
+  #cooperImage {
+    width: 48.3vw; /* تحديد عرض الصورة على أجهزة الكمبيوتر */
+    height: auto; /* الحفاظ على نسبة العرض والارتفاع */
+    border-radius: 3px;
+    margin-left: 2vw;
+    margin-top: 6vw;
+  }
+  }
+</style>
+
+
+
+
+
+
+</div>
+
+  <br>
+
+
+  
+  
+
+
+<br>
+
+
+  
+
+  
+  
+  <div class="about-content">
+  <div class="about-text">
+    TiredGuy has taken his place among frogs and dogs ruling the world, effortlessly reminding everyone who's boss—with a beer in one hand and zero stress in the other.  
+
+</div>
+
+  <div class="about-text">
+Let’s make chaos work for us!"<br> TiredGuy 
+  </div>
+
+  <div class="about-text" style="font-weight: bold; text-align: center; color: #white; max-width: 90%;">
+    TiredGuy will not build its future by exploiting others
+  </div>
+</div>
+
+
+    <img id="db" src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/IMG_20241229_015702.png?alt=media&token=a46cf787-1b10-4b0a-b796-ac1254ff577c" alt="Image" style="width: ; height: ; border-radius: 1vw;">
+  
+
+
+   <img id="db" src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/IMG_20241229_015702.png?alt=media&token=a46cf787-1b10-4b0a-b796-ac1254ff577c" alt="Image" style="width: ; height: auto; border-radius: 1vw">
+  
+  
+  <img id="db" src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/IMG_20241229_015702.png?alt=media&token=a46cf787-1b10-4b0a-b796-ac1254ff577c" alt="Image" style="width: %; height: auto; border-radius: 10px">
+
+
+  <style>
+  /* الإعداد الافتراضي للهواتف */
+  #db {
+    width: 25vw; /* العرض على الهواتف */
+    height: auto; /* الحفاظ على نسبة العرض والطول */
+    : ; /* لضبط التباعد (إذا لزم الأمر) */
+    margin-top: 2vw;
+    display: ; /* لتوسيط الصور */
+     /* لجعلها في المنتصف */
+  }
+
+  /* الإعداد الخاص بأجهزة الكمبيوتر */
+  @media (min-width: 1080px) {
+    #db {
+      width: 15.5%; /* العرض على الكمبيوتر */
+      height: auto; /* الحفاظ على نسبة العرض والطول */
+      margin-left: 1vw;
+      
+      margin-top: 5vw;
+    }
+  }
+  </style>
+</section>
+
+
+<br>
+
+
+<section style="background-color: #32CD32; text-align: center; padding: 2vw;">
+  <!-- الحاوية الرئيسية -->
+  <div class="copy-container" 
+       style="display: flex; justify-content: center; align-items: center; 
+              border: 1px solid #ccc; padding: 1vw; border-radius: 1vw; 
+              width: 50%; max-width: 600px; background-color: white; 
+              margin: 0 auto;"> <!-- التوسيط يتم بـ margin: 0 auto -->
+  
+    <!-- حقل النص -->
+    <input type="text" 
+           value="CiEtjwG7rK6JHKZzWw3fTKcXogQRpyssoopmEvEApump" 
+           id="contractAddress" 
+           readonly 
+           style="border: none; background-color: transparent; 
+                  font-size: 2vw; flex-grow: 1; text-align: center; color: black;">
+
+    <!-- زر النسخ -->
+    <button id="copyButton" onclick="copyToClipboard()" 
+            style="background-color: transparent; border: none; cursor: pointer; 
+                   margin-left: 2vw; color: red; font-size: 2vw; font-weight: 900;">
+      Copy
+    </button>
+  </div>
+
+  <!-- النص أسفل الحاوية -->
+  <div class="contra" 
+       style="text-align: center; font-size: 1.5vw; margin-top: 1vw; 
+              color: green; font-weight: bold;">
+    Contract Address
+  </div>
+</section>
+
+
+<br>
+
+
+
+    <!-- Info Section -->
+<section id="tokennomics" class="info" style="background-image: url(''); background-size: cover; background-position: right; background-color: #32CD32; width: %;">
+
+
+  <div class="content" style="background-color: ; border-radius: 1vw; ">
+    <div class="info-itemm">
+
+      <div style="text-align: center; font-weight: bold; font-family: serif">
+
+<br>
+<div class="about-texts" style="text-align: center;
+margin-left: vw;
+font-size: vw;
+color: black;
+font-family: 'Poppins', sans-serif;
+text-transform: lowercase;
+font-weight: bold;
+letter-spacing: -0.5vw;
+">
+  Tokennomics
+</div>
+
+      </div>
+      <br>
+      
+      
+
+<div class="info-item">
+  <span class="important">NAME :</span>  TiredGuy
+</div>
+
+
+
+<br>
+<div class="info-item">
+  <span class="important">MAX SUPPLY :</span> 1,000,000,000 (1B)
+</div>
+<br>
+
+
+
+<div class="info-item">
+  <span class="important">NETWORK :</span> SOLANA
+</div>
+<br>
+<div class="info-item">
+  <span class="important">LIQUIDITY :</span> LOCKED 🔒| <span class="important">TAXES:</span> 0%
+</div>
+<br>
+
+
+
+
+<div class="info-item">
+  <span class="important">SOLACAN :</span>
+
+  <a href="https://solscan.io/token/CiEtjwG7rK6JHKZzWw3fTKcXogQRpyssoopmEvEApump" target="_blank" style="text-decoration: none; display: inline-block; vertical-align: middle; margin-left: 10px;">
+    <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/92743431-removebg-preview.png?alt=media&token=3cf5e604-19d3-437a-83cb-97d0c98b780a" alt="Solscan" class="solscan-image">
+    <span id="view-token" style="font-size: vw; color: red; vertical-align: middle; margin-top: -2vw">View Token!</span>
+  </a>
+</div>
+<br>
+
+
+
+
+
+
+
+    <section id="buy-now" class="buy-button" style="">
+  <button onclick="window.location.href='https://jup.ag/swap/SOL-CiEtjwG7rK6JHKZzWw3fTKcXogQRpyssoopmEvEApump'">
+    Buy Now
+  </button>
+  
+
+<br><br>
+  </div>
+  </div>
+ <img id="remy-icon" style="border-radius: 8vw; width: vw; height: auto;" src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/IMG_20241229_015702.png?alt=media&token=a46cf787-1b10-4b0a-b796-ac1254ff577c" alt="" class="remy-icon"> </p>
+ </div>
+ 
+ 
+ <style>
+  /* الإعدادات الافتراضية (للهواتف) */
+  .about-texts {
+
+font-size: 5vw;
+
+  } 
+  
+ .copy-Button {
+   font-size: 1vw;
+ } 
+   
+ .text-contract {
+   font-size vw;
+ }
+
+
+ .remy-icon {
+   
+   width: 20vw;
+   height: auto;
+ }
+  
+  .buy-button {
+    text-align: center;
+    margin-top: vw;
+  }
+
+  .buy-button button {
+    background-color: green;
+    color: #fff;
+    border: none;
+    padding: 2vw 6vw;
+    font-size: 4vw;
+    border-radius: 3vw;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .buy-button button:hover {
+    background-color: #f39c12;
+    transform: scale(1.05);
+  } 
+  
+  
+ .contra {
+   font-size: 3vw;
+   margin-left: vw;
+   color: white;
+   
+ }
+  </style>
+ 
+ <style>
+  /* الإعدادات الافتراضية للهاتف تبقى كما هي */
+
+  /* تعديل على أجهزة الكمبيوتر والأجهزة الكبيرة */
+  @media (min-width: 1080px) {
+    #tokennomics {
+      width: 50%; /* تقليل عرض القسم */
+      margin: 0 auto; /* توسيط القسم */
+    
+      margin-left: 0;
+      
+    }
+    
+
+ .contra {
+   font-size: 2vw;
+   margin-left: vw;
+   color: white;
+   
+   
+
+ }
+
+    .about-texts {
+      font-size: 3vw; /* تقليل حجم العنوان */
+      letter-spacing: -0.2vw; /* تقليل التباعد بين الحروف */
+    }
+
+    .info-item {
+      font-size: 1.2vw; /* حجم النصوص الداخلية */
+      line-height: 1vw; /* تحسين التباعد بين السطور */
+      width: 110%; /* جعل المربعات تأخذ العرض الكامل */
+    max-width: 110%; /* تحديد الحد الأقصى لعرض المربع */
+    
+    }
+
+    .solscan-image {
+      width: 1.3vw; /* تصغير حجم الصورة */
+      height: auto; /* الحفاظ على النسبة */
+    }
+
+    #view-token {
+      font-size: 1vw; /* تصغير النص الخاص برابط View Token */
+    }
+
+    .copy-container {
+      padding: 0.5vw; /* تقليل الحواف الداخلية */
+      font-size: 2vw; /* تصغير حجم النص */
+      width: 110%;
+      max-width: 110%; /* تحديد عرض أقصى للعنصر */
+      margin: 1vw auto; /* توسيط عنصر النسخ */
+    }
+
+    #contractAddress {
+      font-size: 1vw; /* تصغير حجم نص العنوان */
+    }
+
+    #remy-icon {
+      width: 6vw;
+      height: auto;/* تقليل حجم الصورة */
+    }
+    
+  .buy-button button {
+    padding: 1vw 2vw;
+    font-size: 1.5vw;
+    background-color: #28a745;
+    color: white;
+    border-radius: 1vw;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .buy-button button:hover {
+    background-color: #218838;
+  } 
+
+  button {
+    padding: 1vw 1vw;
+    font-size: 1.2vw; /* حجم الخط في الأزرار */
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  
+
+  button:hover {
+    background-color: #0056b3; /* تأثير hover على الأزرار */
+ 
+
+    button {
+      font-size: 1vw; /* تصغير حجم الأزرار */
+      padding: 0.5vw 1vw; /* تقليل المساحة الداخلية */
+    }
+  }
+</style>
+
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<style>
+  /* الإعدادات الافتراضية (للهواتف) */
+  .responsive-image {
+    width: 20%; /* العرض على الهواتف */
+    height: 20%; /* الحفاظ على النسبة */
+    border-radius: 1vw; /* الحواف الدائرية */
+    display: block; /* لجعل الصورة عنصراً بلوكياً */
+    margin: 0 auto; /* توسيط الصورة */
+  }
+
+  /* التعديلات لأجهزة الكمبيوتر */
+  @media (min-width: 1080px) {
+    .responsive-image {
+      width: 20vw; /* العرض على أجهزة الكمبيوتر */
+    }
+  }
+</style>
+
+
+      <!-- Roadmap Section -->
+    
+<section id="roadmap" style="background-color: #32CD32; padding: 5vw 2vw; text-align: center;">
+  
+  
+  
+  
+  <div class="about-texts" style="text-align: left;
+margin-left: vw;
+font-size: 5vw;
+color: white;
+font-family: 'Poppins', sans-serif;
+text-transform: lowercase;
+font-weight: bold;
+letter-spacing: -0.5vw;
+text-shadow: -0.5vw -0.5vw 0px #000000, 0.5vw 0.5vw 0px #000000;">
+  Roadmap
+</div>
+
+
+
+  <div style="max-width: 85%; margin: 5vw auto; text-align: center; font-family: 'Poppins', sans-serif; line-height: 1.8; color: black;">
+    <!-- Phase 1 -->
+    
+    <div style="margin-bottom: 5vw;">
+    <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/IMG_20241229_013626_225-removebg-preview.png?alt=media&token=e44049ad-7039-4c79-b778-10b6a699b64e" alt="Phase 1" style="width: 12vw; height: auto; border-radius: vw;">
+      <h3 style="font-size: vw; font-weight: bold; color: red;">Phase 1: The Art of Doing Nothing (Almost)<</h3>
+      <p style="font-size: 3vw; color: black;">
+    TiredGuy kicks off the journey in his signature style—beer in hand, cigarette lit, and zero stress. Plans? Sure, but not before this chill session. The motto? "Relax now, rule the world later."
+      </p>
+    </div>
+
+    <!-- Phase 2 -->
+    <div style="margin-bottom: 5vw;">
+      <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/IMG_20241229_013626_225-removebg-preview.png?alt=media&token=e44049ad-7039-4c79-b778-10b6a699b64e" alt="Phase 2" style="width: 12vw; height: auto; border-radius: vw;">
+      <h3 style="font-size: vw; font-weight: bold; color: red;">Phase 2: Lazy But Brilliant</h3>
+      <p style="font-size: 3vw; color: black;">
+Behind the laid-back attitude, there’s genius brewing (probably in the beer). The community takes charge, brainstorming wild ideas while TiredGuy enjoys his snacks. Together, we redefine "work smarter, not harder."
+      </p>
+    </div>
+
+    <!-- Phase 3 -->
+    <div style="margin-bottom: vw;">
+      <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/IMG_20241229_013626_225-removebg-preview.png?alt=media&token=e44049ad-7039-4c79-b778-10b6a699b64e" alt="Phase 3" style="width: 12vw; height: auto; border-radius: vw;">
+      
+      <h3 style="font-size: vw; font-weight: bold; color: red;">Phase 3: Viral and Vital</h3>
+      <p style="font-size: 3vw; color: black;">
+Memes explode, and TiredGuy becomes a legend without lifting a finger. NFT collections, metaverse plans, and pure community magic. Who knew being tired could be so productive?metaverse.
+      </p>
+    </div>
+
+    <!-- Phase 4 -->
+    <div style="margin-bottom: 5vw;">
+   <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/IMG_20241229_013626_225-removebg-preview.png?alt=media&token=e44049ad-7039-4c79-b778-10b6a699b64e" alt="Phase 4" style="width: 12vw; height: auto; border-radius: vw;">   
+      
+      <h3 style="font-size: vw; font-weight: bold; color: red;">Phase 4: World Domination (Nap Pending)</h3>
+      <p style="font-size: 3vw; color: black;">
+The final phase? Legendary status achieved. NFTs, viral fame, and a chilled-out metaverse for everyone. But first, TiredGuy deserves a long, well-earned nap.
+      </p>
+    </div>
+  </div>
+  
+  
+  <style>
+    
+    
+    @media (min-width: 1024px) {
+  /* ترتيب العناصر بشكل أفقي */
+  #roadmap div[style*="max-width: 85%"] {
+    display: flex; /* تفعيل العرض الأفقي */
+    flex-direction: row; /* ترتيب العناصر في صف */
+    flex-wrap: nowrap; /* منع الالتفاف */
+    justify-content: space-between; /* توزيع العناصر بالتساوي */
+    align-items: flex-start; /* محاذاة العناصر من الأعلى */
+    gap: 2vw; /* مسافة بين العناصر */
+  }
+
+  /* تنسيق كل مرحلة (Phase) */
+  #roadmap div[style*="max-width: 85%"] > div {
+    flex: 1; /* جعل كل عنصر يأخذ نفس النسبة */
+    max-width: 22%; /* تحديد العرض الأقصى لكل عنصر */
+    margin-bottom: 0; /* إزالة المسافة السفلية */
+    text-align: center; /* محاذاة النصوص والصور في المنتصف */
+  }
+
+  /* ضبط الصور */
+  #roadmap img {
+    width: 100%; /* ملاءمة الصورة داخل العنصر */
+    height: auto;
+    border-radius: 1vw; /* حواف دائرية للصور */
+  }
+
+  /* تعديل العناوين */
+  #roadmap h3 {
+    font-size: 1.5vw; /* تقليل حجم النص */
+    font-weight: bold;
+    color: red;
+    margin-top: 1vw;
+  }
+
+  /* تعديل النصوص الفرعية */
+  #roadmap p {
+    font-size: 1vw; /* تصغير حجم النصوص */
+    line-height: 1.5; /* تحسين التباعد بين الأسطر */
+    color: ;
+  }
+    } 
+    
+    
+  </style>
+</section>
+
+
+
+
+
+<img class="responsive-image" src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/IMG_20241229_013626_225-removebg-preview.png?alt=media&token=e44049ad-7039-4c79-b778-10b6a699b64e" 
+     alt="Image">
+
+<style>
+  /* الإعدادات الافتراضية (للهواتف) */
+  .responsive-image {
+    width: 25%; /* العرض على الهواتف */
+    height: 25"%; /* الحفاظ على النسبة */
+    border-radius: 1vw; /* الحواف الدائرية */
+    display: block; /* لجعل الصورة عنصراً بلوكياً */
+    margin: 0 auto; /* توسيط الصورة */
+  }
+
+  /* التعديلات لأجهزة الكمبيوتر */
+  @media (min-width: 1080px) {
+    .responsive-image {
+      width: 20%; /* العرض على أجهزة الكمبيوتر */
+    }
+  }
+</style>
+
+
+
+<section id="dex" style="background-color: white; text-align: center;">
+  <br>
+
+  <!-- الصورة الأولى -->
+  <a href="https://pump.fun/CiEtjwG7rK6JHKZzWw3fTKcXogQRpyssoopmEvEApump" target="_blank">
+    <img class="responsive-img" src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/Z4l25TVt_400x400.jpg?alt=media&token=a208dfde-5867-4976-8716-cc31afa4e9ae" alt="" style="border-radius: 10vw">
+  </a>
+
+  <!-- الصورة الثانية -->
+  <a href="https://www.geckoterminal.com/solana/pools/CP9vgV5z8qJFHx3MYY76urDvMSmHHeyhRQvX21nrNVWx" target="_blank">
+    <img class="responsive-img" src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/images__2_-removebg-preview.png?alt=media&token=1a8197f8-0809-49e4-9403-c8e6252e0b43" alt="" style="border-radius: 10px">
+  </a>
+
+  <!-- الصورة الثالثة -->
+  <img class="responsive-img" src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/DoctorPharmacy-1-removebg-preview.png?alt=media&token=d9f869b3-a282-48ac-96b9-24fbf6b33794" alt="" style="border-radius: 10px">
+
+  <!-- الصورة الرابعة -->
+  <img class="responsive-img" src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/images%20(2).png?alt=media&token=d57d1ccb-5e76-4e6a-b177-2a71d68b34aa" alt="" style="border-radius: 1vw">
+
+  <p2 style="font-size: 5vw; font-weight: bold; color: black; font-family: 'Courier New', Courier, monospace; text-transform: uppercase; letter-spacing: 2px;">
+  </p2>
+</section>
+
+<style>
+  /* الحالة الافتراضية (للأجهزة الصغيرة مثل الهواتف) */
+  .responsive-img {
+    width: 20%;
+    height: auto;
+  }
+
+  /* للأجهزة الكبيرة مثل الكمبيوتر */
+  @media (min-width: 1080px) {
+    .responsive-img {
+      width: 8%;
+      height: auto;
+    }
+  }
+</style>
+
+
+
+<section id="note" style="background-color: #32CD32; padding: 5vw 2vw;">
+  
+  <h2 style="
+    text-align: center; 
+    font-size: 5vw; 
+    color: red; 
+    font-family: 'Poppins', sans-serif; 
+    text-transform: lowercase; 
+    font-weight: bold; 
+    letter-spacing: -0.5vw; 
+    text-shadow: -0.5vw -0.5vw 0px #000000, 0.5vw 0.5vw 0px #000000;">
+    Note
+  </h2>
+  <br>
+  
+ 
+<p class="responsive-text">
+Did you know? The true greatness of this currency lies not in its features or promises, but in the exceptional community that built it.  
+    <strong> </strong> The website? Created by the community. The Telegram? Built and managed by the community. This isn’t just a project; it’s a movement driven by a united and resilient group that revived the currency and made it thrive.  
+    <br><br>
+A remarkable testament to the power of people who believe in something greater than themselves.
+</p>
+
+<style>
+  /* النص الافتراضي (للأجهزة الصغيرة مثل الهواتف) */
+  .responsive-text {
+    text-align: justify;
+    font-size: 3vw; 
+    color: black; 
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 900; 
+    line-height: 1.8; 
+    margin-top: 2vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+
+  /* للأجهزة الكبيرة مثل الكمبيوتر */
+  @media (min-width: 1080px) {
+    .responsive-text {
+      width: 50%; /* عرض النص */
+      font-size: 1.5vw; /* تصغير الخط */
+      margin: 2vw auto; /* توسيط النص */
+      text-align: center; /* جعل النص في المنتصف */
+      line-height: 2; /* تحسين التباعد بين الأسطر */
+    }
+  }
+</style>
+
+</section>
+
+<section id="contract" style="background-color: #32CD32; padding: 5vw 2vw;">
+  <!-- عنوان النص -->
+<h2 class="responsive-heading">
+    Contract ownership is renounced.
+</h2>
+
+<style>
+  /* الإعدادات الافتراضية (للهواتف) */
+  .responsive-heading {
+    text-align: center; 
+    font-size: 5vw; 
+    color: white; 
+    font-family: 'Poppins', sans-serif; 
+    text-transform: lowercase; 
+    font-weight: bold; 
+    letter-spacing: -0.5vw; 
+    text-shadow: -0.5vw -0.5vw 0px #000000, 0.5vw 0.5vw 0px #000000;
+  }
+
+  /* التعديلات لأجهزة الكمبيوتر */
+  @media (min-width: 1080px) {
+    .responsive-heading {
+      font-size: 3vw; /* حجم الخط على الكمبيوتر */
+      letter-spacing: -0.3vw; /* تحسين المسافة بين الأحرف */
+    }
+  }
+</style>
+
+  <br>
+  
+  
+  <div style="
+    text-align: center; 
+    margin-top: 2vw; 
+    font-size: 6vw; 
+    color: white; 
+    font-weight: bold; 
+    text-shadow: -0.2vw -0.2vw 0px #000000, 0.2vw 0.2vw 0px #000000;">
+    ✔️
+    
+    
+        <h2 style="
+      font-family: 'Poppins', sans-serif; 
+      font-size: 3vw; 
+      color: white; 
+      text-transform: uppercase; 
+      font-weight: bold; 
+      letter-spacing: -0.2vw; 
+      text-shadow: -0.3vw -0.3vw 0px #000000, 0.3vw 0.3vw 0px #000000;">
+      Birthday Of TiredGuy🍼
+      
+      
+    
+    </h2>
+
+  </div>
+  
+  
+</section>
+
+
+
+
+  
+<h2 id="birthday-text" 
+    style="
+      font-family: 'Poppins', sans-serif; 
+      text-align: center; 
+      color: white; 
+      text-transform: lowercase; 
+      font-weight: bold; 
+      letter-spacing: -0.5vw; 
+      text-shadow: -0.5vw -0.5vw 0px #000000, 0.5vw 0.5vw 0px #000000;">
+  
+</h2>
+
+<style>
+  /* الحالة الافتراضية (للهواتف والأجهزة الصغيرة) */
+  #birthday-text {
+    font-size: 5vw;
+  }
+
+  /* تخصيص لأجهزة الكمبيوتر والشاشات الكبيرة (مثل 1080px) */
+  @media (min-width: 1080px) {
+    #birthday-text {
+      font-size: 3.5vw;
+    }
+  }
+</style>
+
+
+<section class="straws" style="background-color: #32CD32; padding: 5vw 2vw;">
+
+  
+  <div style="text-align: center; margin-bottom: 3vw;">
+
+    <h2 id="birth-date" style="
+      font-family: 'Poppins', sans-serif; 
+      font-size: 3vw; 
+      color: black; 
+      font-weight: 900; 
+      text-transform: uppercase;">
+     December 28, 2024 14:52:55 +UTC
+   </h2>
+  </div>
+
+   <div id="time-elapsed" style="
+    font-family: 'Poppins', sans-serif; 
+    font-size: vw; 
+    color: red; 
+    background-color: ; 
+    padding: vw; 
+    border-radius: 1vw; 
+    font-weight: 900; 
+    text-align: center; 
+    display: inline-block; justify-content: center;
+align-items: center;">
+    Time Elapsed: 1 Day, 2 Hours
+  </div>
+  
+  
+  
+
+  
+   <style>
+  /* الإعدادات الافتراضية للهواتف */
+  #time-elapsed {
+    font-size: 3vw; /* حجم النص على الهواتف */
+    padding: 3vw; /* الحواف الداخلية على الهواتف */
+    text-align: center;
+    
+    justify-content: center; /* محاذاة أفقية */
+    align-items: center; /* محاذاة عمودية */
+  display: flex; 
+    justify-content: center; /* توسيط أفقياً */
+    align-items: center; /* توسيط عمودياً */
+    width: 100%;
+  }
+  
+
+  /* التعديلات على أجهزة الكمبيوتر */
+@media (min-width: 1080px) {
+    #time-elapsed {
+      font-size: 1.5vw; /* حجم النص على الكمبيوتر */
+      padding: 3vw; /* الحواف الداخلية على الكمبيوتر */
+      text-align: center; /* محاذاة النص في الوسط */
+      display: flex; /* استخدام flex للتوسيط */
+      justify-content: center; /* محاذاة أفقية */
+      align-items: center; 
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+     /* محاذاة عمودية */
+    }
+    
+  
+  }
+</style>
+
+
+  
+
+</section>
+
+
+
+
+<section style="background-color: #32CD32; padding: 5vw 2vw; text-align: center;">
+  
+  
+    <button class="whitepaper" onclick="showWhitepaper()" style="
+    font-family: 'Poppins', sans-serif; 
+    font-size: vw; 
+    background-color: gold; 
+    color: black; 
+    font-weight: 900; 
+    padding: 2vw 5vw; 
+    border: none; 
+    border-radius: 1vw; 
+    cursor: pointer;">
+    Whitepaper
+  </button>
+  
+  <style>
+   .whitepaper {
+     font-size: 3vw;
+   }
+    
+  </style>
+ 
+  <style>
+    
+      @media (min-width: 1080px) {
+   .whitepaper {
+      font-size: 1.5vw;
+      /* حجم الخط لأجهزة الكمبيوتر */
+    }
+  }
+    
+    
+  </style>
+
+</section>
+
+<section class="dog-image" style="text-align: center; padding: 5vw 2vw; background-color: #32CD32;">
+  <!-- الصورة -->
+  <img id="doges" 
+       src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/IMG_20241229_013626_225-removebg-preview.png?alt=media&token=e44049ad-7039-4c79-b778-10b6a699b64e" 
+       alt="Dog Image" 
+       class="Coop" 
+       style="width: %; height: auto;">
+</section>
+
+<style>
+  /* القواعد الافتراضية للهواتف */
+  #doges {
+    width: 40%; /* عرض الصورة على الأجهزة الصغيرة */
+    height: auto;
+  }
+
+  /* تعديل التصميم للأجهزة الكبيرة (أكبر من 1080px) */
+  @media (min-width: 1080px) {
+    #doges {
+      width: 20vw; /* عرض الصورة للأجهزة الكبيرة */
+      height: auto; /* الحفاظ على النسبة */
+    }
+  }
+</style>
+
+
+      
+
+    <!-- Footer -->
+<footer>
+    <p>© 2024 TiredGuy All rights reserved.</p>
+    <p>Follow us: 
+        <a href="https://x.com/WWavy95668?t=EOedudieeXmkPKE7pNOp7A&s=09" target="_blank">
+            <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/new-2023-twitter-logo-x-icon-design_1017-45418.jpg?alt=media&token=08143d22-606f-464b-8a0e-0974c41fb45e" alt="Twitter" class="social-icon">
+        </a> 
+        <a href="https://t.me/tiredguycto" target="_blank">
+            <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/2048px-Telegram_logo.svg.png?alt=media&token=6d6dc1de-c2fd-4dbd-83ca-4069f6b7e296" alt="Telegram" class="social-icon">
+        </a>
+        <a href="https://discord.gg/3DdGB" target="_blank">
+            <img src="https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/discord_icon_130958.png?alt=media&token=7b9c4138-b3cd-4d7f-be03-0a55ad6592dc" alt="Discord" class="social-icon">
+        </a>
+    </p>
+    <!-- Credit for the image -->
+
+
+
+</footer>
+
+
+
+
+
+</body>
+</html>
+
+
+<script>
+  
+  function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const currentRight = sidebar.style.right;
+
+  if (currentRight === '0px') {
+    sidebar.style.right = '-100%'; 
+  } else {
+    sidebar.style.right = '0px'; 
+  }
+}
+
+
+function scrollToSection(sectionId) {
+  
+  var section = document.getElementById(sectionId);
+  section.scrollIntoView({
+    behavior: 'smooth', 
+    block: 'start' 
+  });
+
+
+  closeSidebar();
+}
+
+
+function closeSidebar() {
+  document.getElementById('sidebar').style.right = '-100%'; 
+}
+
+
+
+
+    
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  
+  const aboutElements = document.querySelectorAll('.about-text');
+  const tokennomicsElements = document.querySelectorAll('#tokennomics .info-item, #tokennomics .buy-button');
+  const roadmapPhaseElements = document.querySelectorAll('#roadmap .roadmap div, #roadmap h3, #roadmap img, #roadmap p'); 
+  const dogImageElements = document.querySelectorAll('.dog-image img'); 
+
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // جعل العنصر مرئيًا عند دخوله الشاشة
+        entry.target.style.transition = "all 0.6s ease-out";
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+      } else {
+        // إخفاء العنصر عند خروجه من الشاشة
+        entry.target.style.transition = "all 0.6s ease-out";
+        entry.target.style.opacity = "0";
+        entry.target.style.transform = "translateY(20px)";
+      }
+    });
+  }, {
+    threshold: 0.1 // يبدأ التأثير عندما يظهر 10% من العنصر
+  });
+
+  // إعداد العناصر المخفية لجميع الأقسام
+  aboutElements.forEach(el => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(20px)";
+    observer.observe(el); // مراقبة كل عنصر
+  });
+
+  tokennomicsElements.forEach(el => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(20px)";
+    observer.observe(el); // مراقبة العناصر داخل tokennomics
+  });
+
+  roadmapPhaseElements.forEach(el => {
+    el.style.opacity = "0";  // تعيين الشفافية الافتراضية
+    el.style.transform = "translateY(20px)";  // تعيين الإزاحة الافتراضية
+    observer.observe(el);  // مراقبة العناصر داخل roadmap
+  });
+
+  dogImageElements.forEach(el => {
+    el.style.opacity = "0";  // تعيين الشفافية الافتراضية
+    el.style.transform = "translateY(20px)";  // تعيين الإزاحة الافتراضية
+    observer.observe(el);  // مراقبة الصور داخل dog-image
+  });
+});
+
+
+
+
+
+function showWhitepaper() {
+    document.body.innerHTML = `
+        <section id="whitepaper" style="
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            overflow: hidden;">
+            
+            <h1 style="
+                font-size: 4vw;
+                font-weight: 900;
+                color: red;
+                border-bottom: 3px solid black;
+                padding-bottom: 1vh;">
+                WHITEPAPER 🧻
+            </h1>
+
+            <div style="
+                margin-top: 2vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;">
+                <h1 style="font-size: 3vw; margin-bottom: 3vh;">Are you serious? LMAO</h1>
+                
+                <div class="dancing-emoji" style="
+                    width: 14vw;
+                    height: 14vw;
+                    background-image: url('https://firebasestorage.googleapis.com/v0/b/xsun-b171d.appspot.com/o/IMG_20241229_013626_225-removebg-preview.png?alt=media&token=e44049ad-7039-4c79-b778-10b6a699b64e');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    animation: crazyDance 3s infinite ease-in-out, zoomIn 5s 3s forwards, explode 1s 8s forwards;">
+                </div>
+                
+                <p style="margin-top: 2vw; font-size: 4vw; color: #555;"></p>
+                <button onclick="goBack()" style="
+                    margin-top: 5vh;
+                    padding: 1vw 4vw;
+                    font-size: 2vw;
+                    background-color: #007BFF;
+                    color: white;
+                    border: none;
+                    border-radius: 1vw;
+                    cursor: pointer;
+                    font-weight: bold;
+                    transition: background-color 0.3s;">
+                    Take me back to sanity!
+                </button>
+            </div>
+        </section>
+
+        <style>
+            /* حركات الرقص */
+         @keyframes crazyDance {
+                0% {
+                    transform: rotate(0deg) scale(1);
+                }
+                10% {
+                    transform: rotate(30deg) scale(1.2);
+                }
+                20% {
+                    transform: translateX(-20px) rotate(-30deg) scale(0.9);
+                }
+                30% {
+                    transform: translateY(-20px) rotate(45deg) scale(1.1);
+                }
+                40% {
+                    transform: translateX(20px) rotate(-45deg) scale(1);
+                }
+                50% {
+                    transform: translateY(20px) rotate(360deg) scale(0.8);
+                }
+                60% {
+                    transform: translateX(-20px) rotate(-360deg) scale(1.2);
+                }
+                70% {
+                    transform: translateY(-20px) rotate(15deg) scale(0.9);
+                }
+                80% {
+                    transform: translateX(20px) rotate(-15deg) scale(1.1);
+                }
+                90% {
+                    transform: translateY(10px) rotate(720deg) scale(0.7);
+                }
+                100% {
+                    transform: rotate(0deg) scale(1);
+                }
+            }
+
+            /* حركة الاقتراب */
+            @keyframes zoomIn {
+                0% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(5) translateZ(50px);
+                    opacity: 0.7;
+                }
+            }
+
+            /* حركة الانفجار */
+            @keyframes explode {
+                0% {
+                    transform: scale(5);
+                    background-color: transparent;
+                }
+                50% {
+                    transform: scale(10);
+                    background-color: #f9d71c;
+                }
+                100% {
+                    transform: scale(50);
+                    background-color: #654321;
+                    opacity: 0;
+                }
+            }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+        </style>
+    `;
+
+    // التأكد من إعادة الحركات بعد الانفجار
+    const emoji = document.querySelector('.dancing-emoji');
+
+    // إضافة مستمع للأنيمشن عند الانتهاء
+    emoji.addEventListener('animationend', (e) => {
+        if (e.animationName === 'explode') {
+            // بعد الانفجار، نعيد الأنيمشين من البداية
+            emoji.style.animation = 'none';  // إزالة الأنيمشن مؤقتاً
+            void emoji.offsetWidth;         // إجبار المتصفح على إعادة حساب الأنيمشن
+            emoji.style.animation = 'crazyDance 3s infinite ease-in-out, zoomIn 5s 3s forwards, explode 1s 8s forwards'; // إعادة الأنيمشن
+        }
+    });
+}
+
+// دالة العودة
+function goBack() {
+    location.reload(); // إعادة تحميل الصفحة لإرجاع المحتوى الأصلي
+}
+
+
+
+
+// إنشاء النص "Age of STRAWS" وإضافته إلى DOM
+// إنشاء النص "Age of STRAWS" فوق المربع
+function updateWantedCounter() {
+  // تاريخ الحدث: 28 ديسمبر 2024
+  const eventDate = new Date('2024-12-28T14:52:55+00:00');
+  const now = new Date();
+
+  // حساب الفرق بالوقت
+  const elapsed = now - eventDate;
+
+  // تحويل الوقت إلى سنوات، أشهر، أيام، ساعات، دقائق وثواني
+  const years = Math.floor(elapsed / (1000 * 60 * 60 * 24 * 365.25));
+  const months = Math.floor((elapsed % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24 * 30.44));
+  const days = Math.floor((elapsed % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
+
+  // تحديث النص
+  const counter = document.getElementById('time-elapsed');
+  counter.innerHTML = `
+      ${years} YEARS, ${months} MONTHS, ${days} DAYS,
+      ${hours} HOURS, ${minutes} MINUTES, ${seconds} SECONDS
+    `;
+}
+
+// تشغيل التحديث كل ثانية
+setInterval(updateWantedCounter, 1000);
+updateWantedCounter(); // التحديث الفوري عند تحميل الصفحة
+
+
+
+
+
+
+
+
+
+
+
+function showComingSoons() {
+  // Show the "Coming Soon" message when clicked
+  const comingSoonText = document.getElementById('comingSoonText');
+  comingSoonText.style.display = 'block';
+
+  // Hide the message after 3 seconds
+  setTimeout(function() {
+    comingSoonText.style.display = 'none';
+  }, 3000); // Display for 3 seconds
+}
+
+
+
+function showComingSoon() {
+  // Show the "Coming Soon" message when clicked
+  const comingSoonText = document.getElementById('comingSoonText');
+  comingSoonText.style.display = 'block';
+
+  // Hide the message after 3 seconds
+  setTimeout(function() {
+    comingSoonText.style.display = 'none';
+  }, 3000); // Display for 3 seconds
+}
+
+
+
+function copyToClipboard() {
+  var copyText = document.getElementById("contractAddress");
+  var copyButton = document.getElementById("copyButton");
+
+  // تحديد النص لنسخه
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+  // تنفيذ نسخ النص
+  document.execCommand("copy");
+
+  // استبدال "Copy" بـ علامة الصح
+  copyButton.innerHTML = "✔"; // تغيير كلمة "Copy" إلى علامة صح
+
+  // إخفاء علامة الصح بعد ثانية
+  setTimeout(function() {
+    copyButton.innerHTML = "Copy"; // العودة إلى النص الأصلي
+  }, 1000);
+}
+
+
+
+window.addEventListener("resize", function() {
+    if (window.innerWidth >= 1200) {
+        document.body.style.fontSize = "18px"; // للكمبيوتر
+    } else if (window.innerWidth >= 768) {
+        document.body.style.fontSize = "16px"; // للأجهزة اللوحية
+    } else {
+        document.body.style.fontSize = "14px"; // للهواتف
+    }
+});
+
+
+
+
+function showLegalNotice() {
+    // إخفاء الصفحة الرئيسية وإظهار صفحة الملاحظة القانونية
+    document.body.innerHTML = `
+        <section id="legalNotice" style="position: relative; height: 100vh; font-family: Arial, sans-serif; background-color: #f0f8ff; color: #333; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; padding: 5vw; overflow-y: auto;">
+            <h1 style="font-size: 6.5vw; color: red; text-align: center; font-weight: 900; border-bottom: 3px solid black; padding-bottom: 4vw; margin: 0;">
+                Important Disclaimer and Clarification
+            </h1>
+
+            <div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; text-align: left; padding-top: 8vw; width: 100%; max-width: 900px;">
+                <p style="font-size: 2.5vw; margin-bottom: 5vw; line-height: 1.6;">
+                    <strong>DB Cooper</strong> is a fictionalized and speculative figure for the purposes of this cryptocurrency meme project. Below are the key aspects explaining the fictional and satirical nature of the project:
+                </p>
+                
+                <p style="font-size: 2.5vw; margin-bottom: 5vw; line-height: 1.6;">
+                    <strong>Key Points About the Project and Character:</strong>
+                    <br>1. <strong>The Name "DB Cooper":</strong> The name is a pseudonym created during media coverage of an unsolved hijacking case in the 1970s. It is not a real name, nor is it tied to a confirmed individual, making it legally and ethically open for creative use.
+                    <br>2. <strong>Artistic Nature of Imagery:</strong> The images traditionally associated with "DB Cooper" are artist-rendered sketches based on witness descriptions during the investigation. These sketches do not depict a real, identifiable person and are therefore not subject to personal image rights.
+                    <br>3. <strong>A Fictional and Speculative Persona:</strong> This project emphasizes that DB Cooper, as presented here, is entirely speculative and fictional.
+                    <br>4. <strong>Ethical Stance:</strong> We strongly disavow and condemn any criminal actions or implications associated with the DB Cooper case.
+                </p>
+
+                <p style="font-size: 2.5vw; margin-bottom: 5vw; line-height: 1.6;">
+                    <strong>Why DB Cooper Fits the Meme Coin World:</strong>
+                    <br>1. <strong>Mystery and Humor:</strong> The enigmatic nature of DB Cooper makes it a perfect candidate for a meme coin project that thrives on cultural intrigue and humor.
+                    <br>2. <strong>Focus on Fiction and Creativity:</strong> This project uses the speculative identity of DB Cooper to build a fictional narrative, focusing on creativity and entertainment rather than controversy or harm.
+                </p>
+
+                <p style="font-size: 2.5vw; margin-bottom: 5vw; line-height: 1.6;">
+                    <strong>Legal and Compliance Considerations:</strong>
+                    <br>1. <strong>Fair Use and Parody:</strong> Under the Fair Use Doctrine (17 U.S.C. § 107), parody and satire are protected when they involve creative and transformative uses of public figures or speculative personas.
+                    <br>2. <strong>Public Domain Materials:</strong> The sketches and other imagery related to DB Cooper are non-copyrighted, investigative tools created during a public investigation, making them fair for use in creative projects.
+                    <br>3. <strong>Transparency and Disclosure:</strong> The project ensures full transparency about its purpose and disclaimers, as required under global cryptocurrency regulations.
+                </p>
+
+                <p style="font-size: 2.5vw; margin-bottom: 4vw; line-height: 1.6;">
+                    <strong>Disclaimer for Users:</strong>
+                    <br>"This project is entirely fictional and speculative, inspired by the cultural intrigue surrounding the pseudonymous figure DB Cooper. The name and imagery are not tied to any real individual, and the project strongly disavows and condemns any criminal activities historically linked to the case. Our use of the character is purely for entertainment and humor, adhering to legal and ethical standards. The project is not an investment tool but a community-driven, meme-focused initiative meant for fun."
+                </p>
+
+                <p style="font-size: 2.5vw; margin-bottom: 5vw; line-height: 1.6;">
+                    <strong>Relevant Legal References and Supporting Links:</strong>
+                    <br>1. <a href="https://www.copyright.gov/fair-use" target="_blank" style="color: blue; text-decoration: underline;">Fair Use in U.S. Copyright Law</a> – Outlining protections for transformative works, parody, and satire.
+                    <br>2. <a href="https://www.copyright.gov/circs/circ01.pdf" target="_blank" style="color: blue; text-decoration: underline;">Public Domain Guidelines</a> – Legal explanation of materials free for use.
+                    <br>3. <a href="https://www.sec.gov/spotlight/cybersecurity" target="_blank" style="color: blue; text-decoration: underline;">SEC Cryptocurrency Guidelines</a> – Rules for transparency and lawful operation of crypto projects.
+                </p>
+
+                <button onclick="goBack()" style="margin-top: 4vw; padding: 2vw 4vw; font-size: 4vw; background-color: #007BFF; color: white; border: none; border-radius: 1vw; cursor: pointer; transition: background-color 0.3s; font-weight: 900;">
+                    Back
+                </button>
+            </div>
+        </section>
+        <style>
+            #legalNotice {
+                font-family: Arial, sans-serif;
+                color: #333;
+                overflow-y: auto;
+            }
+            
+            button:hover {
+                background-color: #0056b3;
+            }
+        </style>
+    `;
+}
+
+// دالة العودة
+function goBack() {
+    location.reload(); // إعادة تحميل الصفحة لإرجاع المحتوى الأصلي
+}
+
+
+
+</script>
+</body>
+
+</html>
